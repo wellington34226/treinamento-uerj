@@ -1,0 +1,28 @@
+
+
+/* Estilos genéricos */
+
+body {
+    background-color: black;
+}
+
+/* Logo */
+
+.logo {
+    width: 120px;
+}
+
+.svg-icon-netflix-logo {
+    fill: red;
+}
+
+/* Menu */
+
+.menu ul {
+    list-style: none;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
