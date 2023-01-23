@@ -1,1 +1,1 @@
-javac -encoding utf8 *.java
+javac -encoding utf8 Exercicios/*.java Exemplos/*.java
