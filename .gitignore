@@ -1,4 +1,4 @@
 .vscode
 *-workspace
 .hintrc
-Java/*.class
+Java/*/*.class
