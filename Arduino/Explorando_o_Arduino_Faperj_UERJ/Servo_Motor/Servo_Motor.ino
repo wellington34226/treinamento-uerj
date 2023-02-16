@@ -2,6 +2,7 @@
 
 Servo servo01;
 int pos = 0;
+bool subindo = true;
 
 void setup() {
   Serial.begin(115200);
@@ -9,16 +10,23 @@ void setup() {
   servo01.attach(5);       // Controle no pino D5   
 }
 void loop() {
-  
-   delay(200);
-  for (pos = 0; pos <= 180; pos += 1) { 
-    // in steps of 1 degree
-    servo01.write(pos);              
-    delay(30);                       
+  Serial.print("Posicao:");
+  Serial.println(pos);
+  servo01.write(pos);
+  delay(100);
+  if(subindo){
+    if(pos==180){
+      subindo = false;
+      pos--;
+    }else{
+      pos++;
+    }
+  }else{
+    if(pos==0){
+      subindo = true;
+      pos++;
+    }else{
+      pos--;
+    }
   }
-  for (pos = 180; pos >= 0; pos -= 1) { 
-    servo01.write(pos);              
-    delay(30);                       
-  }
-
 }

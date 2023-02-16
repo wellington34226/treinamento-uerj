@@ -1,17 +1,18 @@
 /* Experimento 2
 Implementar um sinal luminoso, com botão, para travessia de pedestres.
 Regras:
-– A luz verde fica normalmente acesa;
-– Quando o botão é pressionado, 20 seg depois a luz amarela acende, concomitante à luz
+  A luz verde fica normalmente acesa;
+  Quando o botão é pressionado, 20 seg depois a luz amarela acende, concomitante à luz
 verde. Ficarão acesas durante 10s;
-– A luz vermelha acende, permanecendo assim por 20s;
-– A luz verde volta a acender;
-– A luz amarela só acende se a luz verde já estiver acesa;
+  A luz vermelha acende, permanecendo assim por 20s;
+  A luz verde volta a acender;
+  A luz amarela só acende se a luz verde já estiver acesa;
 Componentes utilizados;
-– Placa Arduino UNO;
-– Uma micro-chave mecânica;
-– LEDs vermelho, amarelo e verde;
-– Jumpers e protoboard;
+  Placa Arduino UNO;
+  Uma micro-chave mecânica;
+  LEDs vermelho, amarelo e verde;
+  Jumpers e protoboard;
+Finalizado
 */
 // Pinos de controle
 short int ledVerdePino    = 2;
@@ -33,7 +34,7 @@ long int tempoBase        = 1000;//para controlar o multiplicador dos temporizad
 long int ledVerdeTempo    = 20*tempoBase;
 long int ledAmareloTempo  = 10*tempoBase;
 long int ledVermelhoTempo = 20*tempoBase;
-long int botaoTempo       = 5;
+long int botaoTempo       = 10;//10 milissegundos de debounce
 //Carimbos de tempo data e hora da ultima modificação de estado
 long int ledVerdeStamp    = 0;
 long int ledAmareloStamp  = 0;
@@ -70,11 +71,9 @@ void loop() {
   if(botao != botaoEstadoAnterior){
     botaoEstadoAnterior = botao;
     botaoStamp = correnteStamp;
-    estadosSerial();
   }else if(botaoEstadoAnterior != botaoEstadoCorrente){
     if((correnteStamp-botaoStamp)>=botaoTempo){
       botaoEstadoCorrente = botao;
-      estadosSerial();
     }
   }
   if(ledVermelhoEstado == HIGH){

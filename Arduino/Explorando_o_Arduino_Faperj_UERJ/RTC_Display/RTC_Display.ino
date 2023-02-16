@@ -1,12 +1,13 @@
+#include <Wire.h>
 #include <RtcDS3231.h>
-#include <Wire.h> 
 #include <TM1637Display.h>
 
 RtcDS3231<TwoWire> Rtc(Wire);
 RtcDateTime   dataHora;
+RtcTemperature temp;
 
-#define CLK 3
-#define DIO 4
+#define CLK 5
+#define DIO 6
 
 TM1637Display tm(CLK, DIO);
 
@@ -17,26 +18,21 @@ void setup(){
   tm.setBrightness(3);
   tm.clear(); 
   Rtc.Begin();
-  Rtc.SetDateTime(RtcDateTime(2022,12,14,14,34,00)); // Acertando data e hora
-
+  Rtc.SetDateTime(RtcDateTime(2023,2,2,11,4,00)); // Acertando data e hora
   
-  if (!Rtc.GetIsRunning())
-    {
-        Serial.println("RTC was not actively running, starting now");
-        Rtc.SetIsRunning(true);
-    }
-
-    
+  if (!Rtc.GetIsRunning()){
+      Serial.println("RTC was not actively running, starting now");
+      Rtc.SetIsRunning(true);
+  }
 }
 
-
 void loop(){
-  
-  RtcTemperature temp = Rtc.GetTemperature();
+  temp = Rtc.GetTemperature();
   dataHora = Rtc.GetDateTime();     
-  tm.showNumberDec(temp.AsFloatDegC(),true,4,0);  
+  tm.showNumberDec(temp.AsFloatDegC(),false,2,0);
+  
   delay(3000);
-  tm.clear();    
+  tm.clear();
   tm.showNumberDecEx(dataHora.Hour()*100 + dataHora.Minute(),0b11100000,false,4,0); 
   delay(27000);
 }

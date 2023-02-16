@@ -7,13 +7,9 @@ void setup () {
 }
 
 void loop () {
-  
-          
-          elapsedTime = millis() - startTime;
-          if (elapsedTime/1000 > 120){  // 5 minutos           
-           Serial.println("teste de millis");
-           startTime = millis();
-          }
-      
-      
+  elapsedTime = millis() - startTime;
+  if (elapsedTime/1000 > 120){  // 5 minutos           
+   Serial.println("teste de millis");
+   startTime = millis();
+  }
 }

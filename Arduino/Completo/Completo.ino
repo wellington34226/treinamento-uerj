@@ -1,17 +1,18 @@
 #include <Arduino.h>
 
-int tripotPino = A0;
-int ldrPino    = A1;
-
-int ledVerdePino    = 2;
-int ledVermelhoPino = 3;
-int ledAmareloPino  = 4;
-int botaoPino       = 7;
-int relePino        = 8;
-int rgbVermelhoPino = 9;
-int rgbVerdePino    = 10;
-int rgbAzulPino     = 11;
-
+/* Definição dos pinos de entrada e saída */
+const short int tripotPino = A0;
+const short int ldrPino    = A1;
+const short int ledVerdePino    = 2;
+const short int ledVermelhoPino = 3;
+const short int ledAmareloPino  = 4;
+const short int botaoPino       = 7;
+const short int presencaPino    = 8;
+const short int rgbVermelhoPino = 9;
+const short int rgbVerdePino    = 10;
+const short int rgbAzulPino     = 11;
+const short int relePino        = 12;
+/* Estados dos pinos */
 int ledVerdeEstado    = 0;
 int ledVermelhoEstado = 0;
 int ledAmareloEstado  = 0;
@@ -51,6 +52,7 @@ void setup() {
   pinMode(relePino,       OUTPUT);
   pinMode(tripotPino,     INPUT);
   pinMode(ldrPino,        INPUT);
+  pinMode(presencaPino,   INPUT);
   pinMode(botaoPino,      INPUT_PULLUP);
 }
 

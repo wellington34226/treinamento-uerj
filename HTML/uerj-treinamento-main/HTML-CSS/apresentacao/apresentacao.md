@@ -14,6 +14,7 @@ Vicente Calfo
 # Apresentação
 
 ## Objetivo
+
 Criar páginas web usando a linguagem de marcação HTML
 
 ## Abordagem
@@ -41,7 +42,7 @@ O HTML é dividido em *tags*, que são elementos com atributos que indicam "cois
 
 ## Semântica
 
-As *tags* possuem valores semânticos, o que significa que cada componente da página terá seu significado específico. 
+As *tags* possuem valores semânticos, o que significa que cada componente da página terá seu significado específico.
 
 ---
 
@@ -78,11 +79,9 @@ As *tags* possuem valores semânticos, o que significa que cada componente da p�
     <li>Assegurar acessibilidade das páginas web por um grande número de plataformas e navegadores.</li>
 </ol>
 
-
 # O Papel do HTML
 
 O HTML fornece a interface básica para interação com a aplicações web.
-
 
 ---
 
@@ -107,9 +106,10 @@ O HTML fornece a interface básica para interação com a aplicações web.
 ---
 
 # Anatomia de uma tag
+
 ## Tags com fechamento
 
-```html 
+```html
 
 <html></html>
 <body></body>
@@ -120,7 +120,7 @@ O HTML fornece a interface básica para interação com a aplicações web.
 
 ## Tags sem fechamento
 
-```html 
+```html
 
 <br />
 <img />
@@ -131,7 +131,7 @@ O HTML fornece a interface básica para interação com a aplicações web.
 
 # Anatomia de uma tag
 
-```html 
+```html
 
 <img src="avatar.png" class="avatar" alt="Avatar do usuário João" />
 
@@ -140,6 +140,7 @@ O HTML fornece a interface básica para interação com a aplicações web.
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Parágrafo
 
 ```html
@@ -152,6 +153,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Quebra de linha
 
 ```html
@@ -164,6 +166,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## SPAN - Tag sem valor semântico
 
 ```html
@@ -175,6 +178,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Títulos
 
 ```html
@@ -191,6 +195,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Destaques
 
 ```html
@@ -204,6 +209,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Citação de texto
 
 ```html
@@ -222,6 +228,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Bloco de código (linguagem de programação)
 
 ```html
@@ -232,6 +239,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Lista Não Ordenada
 
 ```html
@@ -248,6 +256,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Lista Ordenada
 
 ```html
@@ -264,6 +273,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Tags de HTML para formatação de texto
+
 ## Lista Descritiva
 
 ```html
@@ -289,9 +299,10 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Containers
+
 ## article
 
-```html 
+```html
 
 <article>
     <h2>Título de um post</h2>
@@ -307,9 +318,10 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Containers
+
 ## header
 
-```html 
+```html
 
 <article>
     <header>
@@ -322,9 +334,10 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Containers
+
 ## footer
 
-```html 
+```html
 
 <article>
     <header>
@@ -340,9 +353,10 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Containers
+
 ## section
 
-```html 
+```html
 
 <section>
   <h2>Seção de uma página</h2>
@@ -354,9 +368,10 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Containers
+
 ## DIV
 
-```html 
+```html
 
 <div>
   <h2>Seção de uma página</h2>
@@ -368,9 +383,10 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Containers
+
 ## Navegação
 
-```html 
+```html
 
 <nav>
   <ol>
@@ -384,9 +400,10 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Containers
+
 ## Conteúdo Principal
 
-```html 
+```html
 
 <body>
   <main>
@@ -399,9 +416,10 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Containers
+
 ## Conteúdo Secundário
 
-```html 
+```html
 
 <body>
   <main>
@@ -470,8 +488,6 @@ quis sodales ex dignissim eu.</p>
 
 ```
 
-
-
 ---
 
 # Imagens
@@ -485,6 +501,7 @@ quis sodales ex dignissim eu.</p>
 ---
 
 # Formulários
+
 ## Finalidade dos formulários
 
 <ul>
@@ -492,10 +509,10 @@ quis sodales ex dignissim eu.</p>
   <li>Os formulários fazem o papel de interface do nosso sistema/site, recebendo os dados do inseridos pelo usuário.</li>
 </ul>
 
-
 ---
 
 # Criando um Formulário
+
 Todos os formulários em HTML devem, sem exceção, possuir a tag < FORM >, além disso para o correto funcionamento é necessário dois atributos: *action* e *method*.
 
 <dl>
@@ -514,7 +531,9 @@ Todos os formulários em HTML devem, sem exceção, possuir a tag < FORM >, alé
 ---
 
 # HTTP
+
 ## *Hypertext Transfer Protoco*
+
 O HTTP é um protocolo que define as regras de comunicação entre cliente e servidor na internet.
 
 A troca de dados na web e realizada em um protocolo cliente-servidor. Este é um modelo arquitetural, ou seja, a internet inteira é baseada nesta arquitetura onde há um cliente que solicita e um servidor que responde.
@@ -525,7 +544,7 @@ A troca de dados na web e realizada em um protocolo cliente-servidor. Este é um
 
 <img src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/fetching_a_page.png">
 
-<small style="font-size:15px;">* https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview</small>
+<small style="font-size:15px;">* <https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview</small>>
 
 ---
 
@@ -541,9 +560,10 @@ A troca de dados na web e realizada em um protocolo cliente-servidor. Este é um
 ---
 
 # Campos de entrada de dados
+
 ## < input >
 
-```html 
+```html
 
 <form action="gravar-dados.php" method="post">
   <label for="email-field">Seu e-mail</label>
@@ -692,10 +712,12 @@ A troca de dados na web e realizada em um protocolo cliente-servidor. Este é um
 ---
 
 # Campos de entrada de dados
+
 ## < select >
+
 *combo box*, *menu de salto*, *select*
 
-```html 
+```html
 
 <p>Escolaridade:
 <select name="escolaridade">
@@ -710,9 +732,10 @@ A troca de dados na web e realizada em um protocolo cliente-servidor. Este é um
 ---
 
 # Campos de entrada de dados
+
 ## < textarea >
 
-```html 
+```html
 
 <p>Observações:
   <textarea name="obs" cols="20" rows="5"></textarea>
@@ -730,7 +753,7 @@ Elas funcionam como marcações e rótulos para os elementos que criamos em noss
 
 # < label >
 
-```html 
+```html
 
 <label>Escolaridade:
 <select name="escolaridade">
@@ -740,7 +763,9 @@ Elas funcionam como marcações e rótulos para os elementos que criamos em noss
 </label>
 
 ```
+
 ## Vantagens
+
 <ul>
   <li>Usuários de leitores de tela (lerão o rótulo em voz alta, quando o usuário estiver focado no elemento).</li>
   <li>Usuários que têm dificuldade de clicar em regiões muito pequenas (como checkboxes);</li>
@@ -803,6 +828,7 @@ Elas funcionam como marcações e rótulos para os elementos que criamos em noss
 ---
 
 # Formulário Avançado
+
 # Grupo de Opções - < optgroup  >
 
 ```html
@@ -819,10 +845,13 @@ Elas funcionam como marcações e rótulos para os elementos que criamos em noss
   </select>
 
 ```
+
 ---
 
 # Citação Curta
+
 ## < q >
+
 ```html
 
 <p>A expressão <q>furiosa</q> dessa estátua de que fala Rabelais, 
@@ -833,8 +862,11 @@ corresponde também à realidade.</p>
 ---
 
 # Abreviação
+
 ## < abbr >
+
 A marcação de abreviações pode fornecer informações úteis para navegadores, sistemas de tradução e mecanismos de pesquisa.
+
 ```html
 
 <p>O <abbr title="Hypertext Transfer Protocol">HTTP</abbr> é um 
@@ -845,7 +877,9 @@ protocolo de comunicação utilizado para sistemas de informação.</p>
 ---
 
 # Bloco de Endereço
+
 ## < address >
+
 O elemento de endereço HTML define as informações de contato (autor/proprietário) de um documento ou artigo.
 
 ```html
@@ -862,7 +896,9 @@ O elemento de endereço HTML define as informações de contato (autor/propriet�
 ---
 
 # Citação (citar)
+
 ## < cite >
+
 Define o título de um trabalho criativo (por exemplo, um livro, um poema, uma música, um filme, uma pintura, uma escultura, etc.).
 
 ```html
@@ -873,7 +909,7 @@ Define o título de um trabalho criativo (por exemplo, um livro, um poema, uma m
 
 ---
 
-# < dialog > 
+# < dialog >
 
 ```html
 
@@ -895,16 +931,18 @@ Define o título de um trabalho criativo (por exemplo, um livro, um poema, uma m
 
 # Favicon
 
-Extensões permitidas (navegadores modernos): ICO, PNG, GIF, JPEG	e SVG.
+Extensões permitidas (navegadores modernos): ICO, PNG, GIF, JPEG e SVG.
 
 ```html
 
 <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
 ```
+
 ---
 
 # Estilo (CSS)
+
 ## < style >
 
 ```html
@@ -921,7 +959,7 @@ Extensões permitidas (navegadores modernos): ICO, PNG, GIF, JPEG	e SVG.
 
 # Cores
 
-## https://www.w3schools.com/colors/colors_names.asp
+## <https://www.w3schools.com/colors/colors_names.asp>
 
 As cores HTML são especificadas com nomes de cores predefinidos ou com valores RGB, HEX, HSL, RGBA ou HSLA.
 
@@ -936,6 +974,7 @@ As cores HTML são especificadas com nomes de cores predefinidos ou com valores 
 ---
 
 # Javascript
+
 ## < script >
 
 ```html
@@ -949,7 +988,9 @@ As cores HTML são especificadas com nomes de cores predefinidos ou com valores 
 ---
 
 # Canvas
+
 O < canvas > é usado para desenhar gráficos, em tempo real, por meio de JavaScript.
+
 ```html
 
 <canvas id="myCanvas">O Navegador não suporta canvas.</canvas>
@@ -966,6 +1007,7 @@ ctx.fillRect(0, 0, 80, 100);
 ---
 
 # Imagem Avançada
+
 ## < picture >
 
 ```html
@@ -981,6 +1023,7 @@ ctx.fillRect(0, 0, 80, 100);
 ---
 
 # Caminhos (URLs)
+
 Também conhecido como: paths, links e urls.
 
 ## Caminho absoluto
@@ -990,21 +1033,21 @@ Também conhecido como: paths, links e urls.
 ```
 
 ## Caminho relativo
+
 É uma prática recomendada usar caminhos de arquivo relativos (se possível).
 
 ```html
   <img src="/images/picture.jpg" alt="Picture"> 
 ```
 
-
 ---
 
 # Base (URL)
+
 <ul>
   <li>Especifica a URL base e/ou destino para todas as URLs relativas em uma página;</li>
   <li>Só pode haver um único elemento < base > em um documento.</li>
 </ul>
-
 
 ```html
 <head>
@@ -1033,7 +1076,6 @@ Embute um documento HTML dentro do documento atual.
 
 # Comentários
 
-
 ```html
 
 <!-- <p>Frase comentada. </p> -->
@@ -1048,7 +1090,9 @@ Embute um documento HTML dentro do documento atual.
 ---
 
 # Tags Importantes para SEO
+
 ## Search Engine Optimization (Otimização para motores de busca)
+
 ### O que é SEO?
 
 É o conjunto de técnicas usadas, geralmente divididas entre **tecnologia** e **conteúdo**, para alcançar bom posicionamento de páginas de um site no Google e em outros buscadores, gerando **tráfego orgânico**.
@@ -1058,7 +1102,6 @@ Embute um documento HTML dentro do documento atual.
 # O que é Tráfego Orgânico?
 
 Tráfego orgânico é todo o conjunto de visitas geradas para o seu site de maneira espontânea, ou seja, sem usar anúncios. Geralmente esse tipo de tráfego vem de mecanismos de busca, como o Google, Yahoo! e o Bing.
-
 
 ---
 
@@ -1085,6 +1128,7 @@ Contêineres com nomes específicos ajudam os buscadores a identificar a formaç
 ---
 
 # < meta >
+
 ## Descrição (description)
 
 ```html
@@ -1099,6 +1143,7 @@ pellentesque. Vestibulum pharetra dolor vel consequat accumsan.">
 ---
 
 # < meta >
+
 ## Palavra-chave (keywords)
 
 As palavras-chave são um tipo específico de meta tag que ajuda a informar aos mecanismos de pesquisa quais são os tópicos tratados no conteúdo da página.
@@ -1135,7 +1180,8 @@ As palavras-chave são um tipo específico de meta tag que ajuda a informar aos 
 ---
 
 # Símbolos HTML
-## https://www.w3schools.com/html/html_symbols.asp
+
+## <https://www.w3schools.com/html/html_symbols.asp>
 
 ```html
 
@@ -1148,7 +1194,8 @@ As palavras-chave são um tipo específico de meta tag que ajuda a informar aos 
 ---
 
 # Emoji
-## https://www.w3schools.com/charsets/ref_emoji.asp (código da coluna DEC)
+
+## <https://www.w3schools.com/charsets/ref_emoji.asp> (código da coluna DEC)
 
 Adicionar "&#" + código DEC
 
@@ -1163,7 +1210,9 @@ Adicionar "&#" + código DEC
 ---
 
 # SVG
+
 ## O que é SVG?
+
 O *Scalable Vector Graphics* (SVG) é um formato de arquivo vetorial compatível com a Web.
 
 ```html
@@ -1177,6 +1226,7 @@ O *Scalable Vector Graphics* (SVG) é um formato de arquivo vetorial compatível
 ---
 
 # SVG
+
 ## < circle >
 
 ```html
@@ -1190,6 +1240,7 @@ O *Scalable Vector Graphics* (SVG) é um formato de arquivo vetorial compatível
 ---
 
 # svg
+
 ## < rect >
 
 ```html
@@ -1203,6 +1254,7 @@ O *Scalable Vector Graphics* (SVG) é um formato de arquivo vetorial compatível
 ---
 
 # svg
+
 ## < rect > - canto arredondado
 
 ```html
@@ -1213,6 +1265,7 @@ O *Scalable Vector Graphics* (SVG) é um formato de arquivo vetorial compatível
   </svg>
 
 ```
+
 ---
 
 # svg
@@ -1266,6 +1319,7 @@ O *Scalable Vector Graphics* (SVG) é um formato de arquivo vetorial compatível
 ---
 
 # Adicionando CSS
+
 ## Externo
 
 ```html
@@ -1279,9 +1333,11 @@ O *Scalable Vector Graphics* (SVG) é um formato de arquivo vetorial compatível
   </body>
 </html>
 ```
+
 ---
 
 # Adicionando CSS
+
 ## Interno
 
 ```html
@@ -1326,6 +1382,7 @@ h1 {
 ---
 
 # Seletores
+
 ## tag
 
 ```css
@@ -1340,6 +1397,7 @@ h1 {
 ---
 
 # Seletores
+
 ## Seletor de ID
 
 ```css
@@ -1354,6 +1412,7 @@ h1 {
 ---
 
 # Seletores
+
 ## Seletor de Class
 
 ```css
@@ -1371,6 +1430,7 @@ p.center{
 ---
 
 # Seletores
+
 ## Seletor Universal
 
 ```css
@@ -1384,6 +1444,7 @@ p.center{
 ---
 
 # Seletores
+
 ## Agrupamento
 
 ```css
@@ -1413,9 +1474,10 @@ p {
 
 ```
 
---- 
+---
 
 # Cores
+
 * **Cor-luz:** é toda cor formada pela emissão direta de luz (sistema aditivo);
 * **Cor-pigmento:** é a cor refletida por um objeto (sistema subtrativo);
 
@@ -1446,20 +1508,22 @@ p {
 
 **Intensidade** tem a ver com o brilho da cor. Um matiz de intensidade alta é vívida, brilhante, como o amarelo. Um matiz de intensidade baixa é mais apagada, como as cores pastéis.
 
-<small style="font-size:15px;">* http://www.invivo.fiocruz.br/cienciaetecnologia/cor-luz-ou-pigmento/#:~:text=A%20cor%2Dluz%20ou%20cor,que%20o%20olho%20humano%20percebe.</small>
-
-
+<small style="font-size:15px;">* <http://www.invivo.fiocruz.br/cienciaetecnologia/cor-luz-ou-pigmento/#:~:text=A%20cor%2Dluz%20ou%20cor>,que%20o%20olho%20humano%20percebe.</small>
 
 ---
 
 # Cores
-## RGB 
+
+## RGB
+
 ### rgb(red, green, blue)
 
 * Cada parâmetro (vermelho, verde e azul) define a intensidade da cor entre 0 e 255.
 
 ## HEX
+
 ### #rrggbb
+
 * Onde rr (vermelho), gg (verde) e bb (azul) são valores hexadecimais entre 00 e ff (o mesmo que decimal 0-255).
 
 ---
@@ -1473,3 +1537,300 @@ p {
 
 ---
 
+# Box-Model
+
+Todos os elementos HTML podem ser considerados como caixas, que consiste em: **margens**, **bordas**, **preenchimento** e o **conteúdo real**.
+
+<div style="display: flex; grid-gap:30px">
+<div><img src="https://miro.medium.com/max/408/1*sKnLrT1TtqWDZg7GWoBCow.png" style="height:202px; width:408px; display:block; margin: 30px auto;"></div>
+<div style="font-size:24px;">
+
+<br>
+
+* **Conteúdo** - O conteúdo da caixa, onde aparecem texto e imagens;
+* **Preenchimento** - Limpa uma área ao redor do conteúdo. O enchimento é transparente;
+* **Borda** - Uma borda que contorna o preenchimento e o conteúdo;
+* **Margin** - Limpa uma área fora da borda. A margem é transparente.
+
+</div>
+</div>
+
+---
+
+# Box-Model (Altura e Largura)
+
+```css
+
+div {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid red;
+  margin: 0;
+}
+
+/*
+
+300px (largura declarada)
++ 20px (preenchimento esquerdo + direito)
++ 4px (borda esquerda + direita)
++ 0px (margem esquerda + direita)
+= 324px (largura real)
+*/
+
+```
+
+---
+
+# Box-Sizing
+
+A propriedade CSS **box-sizing** nos permite incluir o preenchimento e a borda na largura e altura total de um elemento.
+
+```css
+
+.teste1 {
+  width: 300px;
+  padding: 50px;
+  border: 1px solid green;
+}
+
+.teste2 {
+  width: 300px;
+  padding: 50px;
+  border: 1px solid purple;
+  /*box-sizing: border-box;*/
+}
+
+```
+
+---
+
+# Background
+
+## background-color
+
+Especifica a cor de fundo de um elemento.
+
+```css
+
+.body {
+  background-color: #000000;
+}
+
+```
+
+---
+
+# Background
+
+## background-image
+
+Especifica uma imagem a ser usada como plano de fundo de um elemento.
+
+```css
+
+.body {
+  background-image: url("imagem.png");
+}
+
+```
+
+---
+
+# Background
+
+## background-repeat e background-position
+
+Controla a repetição de uma imagem horizontal e vertical.
+
+```css
+
+.body {
+  background-image: url("imagem.png");
+  background-repeat: repeat-x; /* repeat|repeat-x|repeat-y|no-repeat */
+  background-position: center top; /* x% y% | x y (px)*/
+}
+
+```
+
+---
+
+# Background
+
+## background-attachment
+
+Trava ou não a imagem de fundo quando houver rolagem de tela.
+
+```css
+
+.body {
+  background-image: url("imagem.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* fixed|scroll */
+}
+
+```
+
+---
+
+# Background
+
+## Declaração compacta
+
+```css
+
+.body {
+  background: #ffffff url("imagem.png") no-repeat right top;
+}
+
+```
+
+---
+
+# Borders
+
+# style, color, width
+
+```css
+
+p {
+  border-style: solid; /* border-top-style */ /* dotted solid double dashed */
+  border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+  border-color: red; /* red green blue yellow */
+  border-radius: 5px;
+}
+
+/* Declaração compacta */
+
+p {
+  border: 6px solid green;
+}
+
+p {
+  border-bottom: 6px solid red;
+}
+
+```
+
+---
+
+# Margin
+
+```css
+
+p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+
+p {
+  margin: 25px 50px 75px 100px;
+}
+
+```
+
+---
+
+# Padding
+
+```css
+
+div {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+div {
+  padding: 25px 50px 75px 100px;
+}
+
+```
+
+---
+
+# Width/Height
+
+```css
+
+div {
+  height: 200px;
+  width: 50%;
+}
+
+```
+
+---
+
+# Text
+
+```css
+
+p {
+  background-color: lightgrey;
+  color: green;
+  text-align: justify;
+  text-align-last: left;
+  text-decoration:underline; /* none|underline|overline|line-through */
+  text-decoration-color: red;
+  text-decoration-style: solid;
+  text-transform: uppercase;  /* none|capitalize|uppercase|lowercase */
+  text-indent: 50px; /* Recuo da primeira linha */
+  letter-spacing: 5px;
+  word-spacing: 10px;
+  line-height: 150%;
+  text-shadow: 2px 2px 5px red; /* H V Blur Cor*/
+}
+
+```
+
+---
+
+# Font
+
+## Famílias
+
+* **Serif fonts** - têm um pequeno traço nas bordas de cada letra. Eles criam uma sensação de formalidade e elegância.
+* **Sans-serif** -  têm linhas limpas (sem pequenos traços anexados). Eles criam um visual moderno e minimalista.
+* **Monospace fonts** - aqui todas as letras têm a mesma largura fixa. Eles criam uma aparência mecânica.
+* **Cursive** -  imitam a caligrafia humana.
+* **Fantasy** -  são fontes decorativas/divertidas.
+
+---
+
+# Diferença entre fontes Serif e Sans-serif
+
+<img src="https://www.w3schools.com/css/serif.gif" style="display:display; width:400px; margin: 40px auto;">
+
+---
+
+# Fonts
+
+```css
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal; /* normal | italic | oblique */
+  font-size: 40px;
+}
+
+```
+
+---
+
+# Unidades de Medida
+
+# Absoluta
+
+* **px** - (pixel)
+
+# Relativas
+
+* **vw, vh** - viewport
+* **em** - Relativo ao tamanho da fonte na qual a unidade é declarada
+* **rem** - Relativo ao tamanho da fonte do elemento raiz
+* **%** - unidade percentual
+
+---

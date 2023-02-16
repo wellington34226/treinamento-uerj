@@ -10,6 +10,7 @@ Componentes utilizados;
 – Placa Arduino UNO;
 – LEDs vermelho, amarelo e verde;
 – Jumpers e protoboard;
+Finalizado
 */
 
 // Pinos de controle

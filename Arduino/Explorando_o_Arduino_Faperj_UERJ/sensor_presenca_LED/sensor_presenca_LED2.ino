@@ -1,22 +1,25 @@
+const byte pinoPIR = 8;
+const byte ledAzul = 11;
+const byte relePino = 5;
 
-const byte ledVermelho = 4;
-const byte pinoPIR = 8; 
-
-
- 
 void setup(){
   Serial.begin(115200);
-  pinMode(ledVermelho,OUTPUT);
+  pinMode(ledAzul,OUTPUT);
+  pinMode(relePino,OUTPUT);
   delay(1000);
-  digitalWrite(ledVermelho, LOW);
+  digitalWrite(ledAzul, LOW);
 }
  
 void loop(){ 
-if (digitalRead(pinoPIR) == HIGH){
-  Serial.println("Entrou!");
-  digitalWrite(ledVermelho, HIGH);
-  delay(15000);
-  digitalWrite(ledVermelho, LOW);
-}
-delay(500);
+  if (digitalRead(pinoPIR) == HIGH){
+    Serial.println("Entrou!");
+    digitalWrite(ledAzul, HIGH);
+    digitalWrite(relePino, HIGH);
+    delay(15000);
+  }else{
+    Serial.println("Saiu!");
+    digitalWrite(ledAzul, LOW);
+    digitalWrite(relePino, LOW);
+    delay(1000);
+  }
 }
