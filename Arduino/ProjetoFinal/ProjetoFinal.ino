@@ -9,13 +9,15 @@
 void setup(){
   Serial.begin(500000);
   while(!Serial){delay(1000);}
-  Serial.println("Dispositivo iniciado!");
+  Serial.println(F("Serial iniciada!"));
   
   #ifdef TRANSMISSOR
     Transmissor::init();
   #elif defined(RECEPTOR)
     Receptor::init();
   #endif
+  
+  Serial.println(F("Dispositivo iniciado!"));
 };
 
 void loop(){
