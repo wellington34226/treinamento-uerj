@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>JavaScript - Classes</title>
+</head>
+<body>
+
+<h2> Utilizando Classes</h2>
+
+
+<script>
+
+class Carro1 {
+    constructor(tipo,ano,cor) {
+	this.tipo = tipo; // Para o construtor iniciar um atributo, referenciá-lo através do this
+	this.ano = ano;
+	this.cor = cor;
+      }
+      calcula_seguro() {
+         return this.ano/10;
+     }
+} 
+    var carro = new Carro1("Astra" , "2004" , 'preta');  // para usar
+    document.write("Carro: " + carro.tipo + '</br>');	
+	document.write("Seguro: " + carro.calcula_seguro());
+</script>
+</body>
+</html>

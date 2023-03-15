@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>JavaScript - getElementById() value e innerHTML</title>
+</head>
+<body>
+
+<h2> getElementById() value e innerHTML Style</h2>
+
+
+
+<input type="text"  id="coordenador" size="15" maxlength="15" onblur="mostra();" />
+<p id="msg1" mensagem="primeira"></p>
+<p id="msg2"></p>
+
+
+<script>
+	msg = document.getElementById("msg1");
+	document.write(msg.attributes.length + '<br>');
+	document.write(msg.attributes[0].value + '<br>');
+	document.write(msg.attributes[1].value + '<br>');
+
+
+function mostra(){
+	saida = document.getElementById("coordenador").value;			
+	document.getElementById("msg1").innerHTML = saida;
+	foi = document.getElementById("msg1").innerHTML;
+	document.getElementById("msg2").innerHTML= foi + " - valor recuperado";	
+		
+}				
+</script>
+
+
+</body>
+</html>

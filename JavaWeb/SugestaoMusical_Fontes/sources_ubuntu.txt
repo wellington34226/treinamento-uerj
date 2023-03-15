@@ -1,0 +1,5 @@
+-encoding utf8
+ -d ..//SugestaoMusical//WEB-INF//classes
+-classpath "//opt//tomcat//lib//servlet-api.jar"
+model//SelecaoMusical.java
+web//Recomendacao.java

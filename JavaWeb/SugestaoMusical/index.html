@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><body>
+<h1 align="center" >Selecione o estilo musical preferido:</h1>
+<form method="POST" action="EscolhaGrupo">
+  <center>
+	<!--
+	<label for="estilo">
+    <select  name="estilo" size="1">
+    <option> Rock
+    <option>Samba
+    <option> Opera
+    <option> MPB
+		</select>
+	</label>
+	-->
+	<label for="rock"><input type="checkbox" onclick="ordenar(this)" id="rock" name="estilos" value="rock">Rock</label>
+	<label for="samba"><input type="checkbox" onclick="ordenar(this)" id="samba" name="estilos" value="samba">Samba</label>
+	<label for="opera"><input type="checkbox" onclick="ordenar(this)" id="opera" name="estilos" value="opera">Opera</label>
+	<label for="mpb"><input type="checkbox" onclick="ordenar(this)" id="mpb" name="estilos" value="mpb">MPB</label>
+	<br>
+	<label for="autor">Autor: <input type="text" id="autor" name="autor" id="autor"></label>
+	<input type="SUBMIT" value="Enviar" >
+	</center>
+</form>
+<script>
+	let ordem = 0;
+	function ordenar(elemento) {
+    if(elemento.checked){
+      ordem++;
+      elemento.value = ordem.toString()+elemento.id;
+    }else{
+      elemento.value = elemento.id;
+    }
+    console.log(elemento);
+  }
+</script>
+</body>
+</html>
+
+

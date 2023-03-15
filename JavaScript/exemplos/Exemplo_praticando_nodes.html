@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>JavaScript - Nodes</title>
+</head>
+<body>
+<h2>Utilizando Nodes</h2>
+<ul id="genios">
+<li id="item1">Faraday</li><li id="item2">LaPlace</li><li id="item3">Tesla</li><li id="item4">Newton</li>
+</ul>
+<script>
+a = document.body.parentNode.nodeName; 
+b = document.head.parentNode.nodeName; 
+
+document.write(a + '<br>');
+document.write(b + '<br>');
+
+x = document.getElementById("item1").parentNode.nodeName;
+document.write(x + '<br>');
+  
+y = document.getElementById("genios").parentNode.nodeName;
+document.write(y + '<br>');
+ 
+nodeList = document.body.childNodes;
+
+texto = "";
+for (i = 0; i < nodeList.length; i++) {
+  texto += nodeList[i].nodeName + "<br>";
+}
+document.write(texto + '<br>');
+
+element = document.getElementById("genios");
+numb = element.childNodes;
+texto = "";
+for (i = 0; i < numb.length; i++) {
+  texto += numb[i].nodeName + "<br>";
+}
+document.write(texto + '<br>');
+
+element = document.getElementById("genios").childNodes[0].innerHTML;
+document.write(' childNodes[1] ' + element + '<br>');
+
+element = document.getElementById("item1").firstChild.nodeName;
+document.write(' firstChild ' + element + '<br>');
+
+texto = document.getElementById("item1").nextSibling.innerHTML; 
+document.write(texto + '<br>');
+
+</script>
+</body>
+</html>

@@ -9,3 +9,7 @@ Repositório dos projetos criados durante os treinamentos da UERJ.
 ## [HTML/CSS](HTML "Projetos de HTML e CSS")
 
 ## [Java](Java "Projetos de Java")
+
+## [JavaScrip](JavaScript "Projetos de JavaScript")
+
+## [Java para Web](JavaWeb "Projetos de Java para Web")

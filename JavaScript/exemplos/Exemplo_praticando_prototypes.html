@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>JavaScript - Prototypes</title>
+</head>
+<body>
+
+<h2> Prototypes</h2>
+
+
+<script>
+
+class Carro {   // com a palavra chave Class
+       constructor(tipo,ano,cor) {
+	    this.tipo = tipo; // Para o construtor iniciar um atributo, referenciá-lo através do this
+	    this.ano = ano;
+	    this.cor = cor;
+      }
+      calcula_seguro() {
+         return this.ano/10;
+     }
+} 
+    var carro = new Carro("Astra" , "2004" , 'preta');  // para usar
+	
+Carro.fabricante = "GM";
+document.write("Fabricante; " + carro.fabricante + '<br>');
+
+Carro.prototype.fabricante = 'GM';
+document.write("Fabricante; " + carro.fabricante + '<br>');   //	
+
+Carro.prototype.tudo = function() {
+  return this.tipo + "  " + this.ano + "  " + this.cor + "  " +  this.fabricante ; 
+  
+};
+
+document.write("Tudo ; " + carro.tudo() + '<br>');   //  Tudo
+document.write("Seguro ; " + carro.calcula_seguro() + '<br>');   //  Tudo
+	 
+</script>
+</body>
+</html>

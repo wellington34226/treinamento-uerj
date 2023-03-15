@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>JavaScript - Usando o objeto Date</title>
+</head>
+<body>
+
+<h2> Metodos do Date</h2>
+
+
+<script>
+
+const dataAgora_02 = new Date();
+const dataAgora_01 = new Date("2020-02-14");
+
+document.write("<h4> dataAgora_01.getFullYear() -> " + dataAgora_01.getFullYear() + "<br></h4>") 
+document.write("<h4> dataAgora_02.getFullYear() -> " + dataAgora_02.getFullYear() + "<br></h4>") 
+
+document.write("<h4> dataAgora_01.getFullYear() -> " + dataAgora_01.getMonth() + "<br></h4>")
+document.write("<h4> dataAgora_02.getFullYear() -> " + dataAgora_02.getMonth() + "<br></h4>")
+
+document.write("<h4> dataAgora_01.getDate() -> " + dataAgora_01.getDate() + "<br></h4>")
+document.write("<h4> dataAgora_02.getDate() -> " + dataAgora_02.getDate() + "<br></h4>")
+
+document.write("<h4> dataAgora_01.getDay() -> " + dataAgora_01.getDay() + "<br></h4>")
+document.write("<h4> dataAgora_02.getDay() -> " + dataAgora_02.getDay() + "<br></h4>")
+
+document.write("<h4> dataAgora_01.getHours() -> " + dataAgora_01.getHours() + "<br></h4>")
+document.write("<h4> dataAgora_02.getHours() -> " + dataAgora_02.getHours() + "<br></h4>")
+
+document.write("<h4> dataAgora_01.getMinutes() -> " + dataAgora_01.getMinutes() + "<br></h4>")
+document.write("<h4> dataAgora_02.getMinutes() -> " + dataAgora_02.getMinutes() + "<br></h4>")
+
+document.write("<h4> dataAgora_01.getSeconds() -> " + dataAgora_01.getSeconds() + "<br></h4>")
+document.write("<h4> dataAgora_02.getSeconds() -> " + dataAgora_02.getSeconds() + "<br></h4>")
+
+document.write("<h4> dataAgora_01.getMilliseconds() -> " + dataAgora_01.getMilliseconds() + "<br></h4>")
+document.write("<h4> dataAgora_02.getMilliseconds() -> " + dataAgora_02.getMilliseconds() + "<br></h4>")
+
+dataAgora_01.setHours(23);
+document.write("<h4> dataAgora_01.getHours() -> " + dataAgora_01.getHours() + "<br></h4>")
+dataAgora_01.setMinutes(34);
+document.write("<h4> dataAgora_01.getMinutes() -> " + dataAgora_01.getMinutes() + "<br></h4>")
+
+
+
+
+</script>
+</body>
+</html>

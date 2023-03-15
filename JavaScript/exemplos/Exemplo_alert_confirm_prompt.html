@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>JavaScript - alert, confirm, prompt</title>
+</head>
+<body>
+
+<h2> alert, confirm, prompt</h2>
+
+
+<script>
+
+alert("Cade voce?");
+
+if (window.confirm("Ficou com medo?")) {
+  document.write("Pede para sair!!!");
+}
+
+medo = window.prompt('Tem medo de escuro?'); //
+
+if (medo=='sim') {
+ alert('Sai fora!!!');
+}
+
+const width = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+const height = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;   
+
+document.write(window.innerWidth + '<br>');
+document.write(window.innerHeight+ '<br>');
+
+document.write(window.outerWidth + '<br>');
+document.write(window.outerHeight);		 
+	 
+</script>
+</body>
+</html>

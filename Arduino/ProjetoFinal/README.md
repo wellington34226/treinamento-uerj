@@ -7,9 +7,11 @@
 > Os valores das entradas analógicas e as mensagens enviadas e recebidas são transformadas no formato JSON e são enviadas para a saída serial, assim é possível utilizar o computador para também apresentar os gráficos das saídas analógicas.
 
 ## Transmissor
-> Captura os valores analógicos das entradas A0, A1 e A2 periodicamente. Na entrada A0 foi conectado um tripot (resistor variável) de 10K&Omega;, a entrada A1 foi conectado um LDR (sensor de luminosidade) e a entrada A2 foi conectada diretamente a saída digital 3 com função PWM.
+> Captura os valores analógicos das entradas A0, A1 e A2 periodicamente. Na entrada A0 foi conectado um trimpot (resistor variável) de 10K&Omega;, a entrada A1 foi conectado um LDR (sensor de luminosidade) e a entrada A2 foi conectada diretamente a saída digital 3 com função PWM.
 > 
-> É enviado um sinal PWM para a saída digital 3 variando de 0 a 100, para visualização da mudança do dutcycle.
+> O LDR é um sensor que funcina de forma analógica, assim o trimpot e o LDR foram escolhidos por apresentarem valores analógicos a serem lidos pelas entradas analógicas.
+> 
+> É enviado um sinal PWM para a saída digital 3 variando de 0 a 100, para visualização da mudança do dutycycle. A saída PWM foi conectada diretamente a entrada analógica A2, assim é possível verificar a mudança do dutycycle.
 > 
 > A cada captura das entradas analógicas os valores obtidos são transmitidos juntos numa mensagem única com 2bytes para cada valor analógico obtido, sendo assim são transmitidos 6bytes na seguinte sequência: A0, A1 e A2. 
 > 
