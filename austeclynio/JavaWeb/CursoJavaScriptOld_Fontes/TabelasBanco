@@ -1,8 +1,0 @@
-CREATE TABLE `UDTInovUERJ/Cursos_FAPERJ/Programação_JavaScript/CursoJavaScript_Fontes`.`Carros`(
-	`id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-	`marca` VARCHAR(250), 
-	`modelo` VARCHAR(250), 
-	`cor` VARCHAR(250), 
-	`ano` INTEGER,
-	PRIMARY KEY (`id`))
-	ENGINE = InnoDB;

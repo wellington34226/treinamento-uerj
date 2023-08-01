@@ -1,5 +1,0 @@
--encoding utf8
- -d "..//CadastroPrimario//WEB-INF//classes"
--classpath "//opt//tomcat//lib//servlet-api.jar://opt//tomcat//lib//commons-lang3-3.0.1.jar://opt//tomcat//lib//mysql-connector-java-8.0.11.jar"
-"web//ControllerCadastrarDados.java"
-"web//ControllerRetornaNome.java"
