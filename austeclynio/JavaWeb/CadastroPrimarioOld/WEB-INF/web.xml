@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    
+    <servlet>
+        <servlet-name>Cadastrar</servlet-name>
+        <servlet-class>web.ControllerCadastrarDados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Nome</servlet-name>
+        <servlet-class>web.ControllerRetornaNome</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Cadastrar</servlet-name>
+        <url-pattern>/CadastroInicial</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Nome</servlet-name>
+        <url-pattern>/VerificarAcesso</url-pattern>
+    </servlet-mapping>
+  
+  
+</web-app>

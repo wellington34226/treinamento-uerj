@@ -1,0 +1,61 @@
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.message .display-message {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.message .display-message strong {
+  display: block;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.message .display-message p {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.message .display-message small {
+  font-size: 10px;
+  text-align: right;
+  margin-top: 5px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.bubble {
+  display: flex;
+  border-radius: 10px;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: 450px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin: 2px 15px 2px 5px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+.sent .bubble {
+  flex-direction: row-reverse;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-bottom-right-radius: 0px;
+}
+.sent p {
+  align-self: flex-end;
+}
+
+.received .bubble {
+  background-color: rgba(255, 211, 50, 0.5);
+  border-bottom-left-radius: 0px;
+}

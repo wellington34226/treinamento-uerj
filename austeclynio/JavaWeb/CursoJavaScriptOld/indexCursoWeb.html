@@ -1,0 +1,531 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript - Exemplo Praticando Ajax 01</title>
+</head>
+<body>
+
+
+<div class="modal_login" id="telaEntradaDados" >			
+		<fieldset>	
+				<label for="nome" >Nome e Sobrenome</label>
+						<input type="text"  name="nome" id="nome" size="40" maxlength="40" title="Maximo 40 caracteres" autocomplete="off" onkeydown="return inibeDigitacao(this.id)" onblur="criticaNomeSobrenome();" onfocus="apagaMsg(this.id);" permitido="qwertyuiopasdfghjklzxcvbnmáéúíóãõâêîôûç ">
+						<p id="msgnome" style="font-size:100%;color:#ff0000"></p>
+				<label for="cpf" >CPF</label>
+						<input type="text"  name="cpf" id="cpf" size="14" maxlength="14" title="Deve ter 14 caracteres"  autocomplete="off" placeholder="999.999.999-99" onblur="criticaCPF();" onkeydown="return inibeDigitacao(this.id);"  onkeypress="colocaMascaraCPF();" onfocus="apagaMsg(this.id);" permitido='1234567890'>
+						<p id="msgcpf" style="font-size:100%;color:#ff0000"></p>
+				<label for="telefone" >Telefone com DDD</label>
+						<input type="text"  name="telefone" id="telefone" size="13" maxlength="13" title="Deve ter 13 caracteres" autocomplete="off" placeholder="(DD)999999999" onblur="criticaTelefone();" permitido='1234567890' onkeydown="return inibeDigitacao(this.id)" onkeypress="colocaMascaraTelefone();" onfocus="apagaMsg(this.id);">
+						<p id="msgtelefone" style="font-size:100%;color:#ff0000"></p>
+				<label for="cep" >CEP</label>
+						<input type="text"  name="cep" id="cep" size="9" maxlength="9" title="Deve ter 9 caracteres" autocomplete="off" placeholder="99999-999" permitido='1234567890' onblur="criticaCEP();" onkeydown="return inibeDigitacao(this.id)" onkeypress="colocaMascaraCEP();" onfocus="apagaMsg(this.id);">
+						<p id="msgcep" style="font-size:100%;color:#ff0000"></p>
+				<label for="endereco">Endereço </label>
+						<input type="text" id="logradouro" name="logradouro" maxlength="50" size="50" value="" style="color:#ffffff;background-color:#55587D" disabled />
+				
+				<label for="numero" title="Permitido até 15 caracteres">Número </label>
+						<input type="text" id="numero" name="numero" maxlength="10" size="10" title="Permitido até 15 caracteres"  value=''/>
+						<p id="msgnumero" style="font-size:100%;color:#ff0000"></p>
+				
+				<label for="complemento">Complemento(opcional) </label>
+						<input type="text" id="complemento" name="complemento" maxlength="50" size="50" value=''/>
+				
+				<label for="bairro">Bairro</label>
+						<input type="text" id="localidade" name="localidade" maxlength="50" size="50" value=''  style="color:#ffffff;background-color:#55587D" disabled />
+				
+				<label for="cidade">Cidade </label>
+						<input type="text" id="cidade" name="cidade" maxlength="50" size="50" value='' style="color:#ffffff;background-color:#55587D" disabled />
+				
+				<label for="estado">Estado </label>
+						<input type="text" id="uf" name="uf" maxlength="50" size="50"  value='' style="color:#ffffff;background-color:#55587D" disabled />	
+						<p id="msgcep" style="font-size:100%;color:#ff0000"></p>
+				<label for="senha" >Senha</label>
+						<input type="password"  name="senha" id="senha" size="12" maxlength="12" title="Entre 8 e 12 caracteres"  permitido="qwertyuiopasdfghjklzxcvbnm1234567890#$@&" onblur="criticaSenhaConfirmaSenha(this.id);" onkeydown="return inibeDigitacaoSenhas(this.id)" onfocus="apagaMsg(this.id);">
+					<p id="msgsenha" style="font-size:100%;color:#ff0000"></p>	
+
+				<label for="senha">Repita a Senha</label><p></p>
+						<input type="password" name="confirmaSenha" id="confirmaSenha" size="12" maxlength="12" title="Entre 8 e 12 caracteres"  permitido="qwertyuiopasdfghjklzxcvbnm1234567890#$@&" onblur="criticaSenhaConfirmaSenha(this.id);" onkeydown="return inibeDigitacaoSenhas(this.id)" onfocus="apagaMsg(this.id);">
+						<p  id="msgconfirmaSenha" style="font-size:100%;color:#ff0000"></p>
+				
+				<input type="submit" value="Enviar" onclick="enviar()" id="botaoLogin" />				
+				<p></p>
+				<p id="msgfinal" style="text-align:left;color:#ff0000;font-size:100%"></p>
+				
+		</fieldset>
+			
+	</div>
+<div class="modal_login" id="telaMenuCarros" style="display:none">
+		<h2 id="tituloMenu"></h2>
+		<fieldset>	
+				
+						<input type="submit"  name="fiat" id="fiat" value="Fiat" onclick="enviarMenu(this.name)">	
+						<input type="submit"  name="gm" id="gm" value="GM" onclick="enviarMenu(this.name)">
+						<input type="submit"  name="vw" id="vw" value="VW" onclick="enviarMenu(this.name)">
+						<input type="submit"  name="ford" id="ford" value="Ford" onclick="enviarMenu(this.name)">										
+					
+				<p></p>
+				<p id="msgmenu" style="text-align:left;color:#ff0000;font-size:100%"></p>
+				
+		</fieldset>
+		
+								
+					<table id="tabelaModelos" style="font-size:2.0vw" >
+						<tr>
+							<th>Marca</th>
+							<th>Modelo</th>							
+							<th>Ano</th>		
+							<th>Cor</th>			
+						</tr>
+					</table>						
+					<p id="msgModelos" style="font-size:2.0vw;color:#ff0000"></p>	
+				
+	
+</div>	
+<script>
+var cep;
+
+/*-----------------------------------------------------------------------------------------*/
+function criaRequest(){
+	   try {
+     		request = new XMLHttpRequest();
+   			} catch (trymicrosoft) {
+     			try {
+       				request = new ActiveXObject("Msxml2.XMLHTTP");
+     			} catch (othermicrosoft) {
+       				try {
+         				request = new ActiveXObject("Microsoft.XMLHTTP");
+       					} 	catch (failed) {
+         						request = null;
+       						}
+     				}
+   				}
+   		if (request == null)
+     		alert("Erro na criação do Objeto Request!");
+     	
+}
+/*-----------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------*/ 
+ function pegaCEP(){
+	
+	document.getElementById("msgcep").innerHTML="";
+	document.getElementById("logradouro").value="";
+	document.getElementById("localidade").value="";
+	document.getElementById("cidade").value="";
+	document.getElementById("uf").value="";
+	 
+	pegaCEPPOST();
+			
+	 
+ }
+ /*----------------------------------------------------------------------*/ 
+ function pegaCEPPOST(){
+	 
+	criaRequest();  				
+	//var url = "http://152.92.181.90:8080/CursoJavaScript/PegaCEP";
+	var url = "http://192.168.1.65:8080/CursoJavaScript/PegaCEP";
+	request.open("POST", url, true);     
+	request.onreadystatechange = preencheCEP;
+	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	request.send("cep=" + document.getElementById("cep").value);	
+	 
+	 
+ }
+ /*-----------------------------------------------------------------------*/ 	
+ function preencheCEP(){
+ 
+  	if (request.readyState ==4) {
+  	
+      if (request.status == 200) { 
+       
+       	cep = eval('(' + request.responseText + ')');  
+       	
+       	
+      			if(cep.encontrou==true){			
+					if (cep.logradouro.trim()!=""){
+						document.getElementById("logradouro").value=cep.logradouro;
+						document.getElementById("localidade").value=cep.bairro;
+					}
+					else{
+						document.getElementById("logradouro").disabled=false;
+						document.getElementById("localidade").disabled=false;
+					} 			
+				
+					document.getElementById("cidade").value=cep.localidade;
+					document.getElementById("uf").value=cep.uf;
+					document.getElementById("numero").disabled=false;
+					document.getElementById("complemento").disabled=false;					
+					
+      			}
+				else{
+					document.getElementById("msgcep").innerHTML="CEP Inexistente!";				
+				}
+		}				
+				
+	}	
+
+
+	
+
+}	
+/*-----------------------------------------------------------------------------------------*/
+  
+function criticaNomeSobrenome(){
+	if (document.getElementById('nome').value.trim().length!=0){
+		arrayNome=document.getElementById('nome').value.split(" ");
+		 if (arrayNome.length<=1){
+		  document.getElementById('msgnome').innerHTML='Faltou o sobrenome!';
+		 }
+		 else{
+			document.getElementById('nome').value = arrayNome.filter(tiraBrancos).join(' ').toUpperCase();
+		}
+		return true;
+	}
+	else{
+		document.getElementById('msgnome').innerHTML='Nome Incorreto!';
+		return false;
+	}
+}
+function apagaMsg(id){
+	document.getElementById('msg' + id).innerHTML='';	
+}
+
+function tiraBrancos(chuck){
+	return chuck!='';
+}
+
+function criticaCPF(){
+	if (document.getElementById('cpf').value.trim().length<14){
+		document.getElementById('msgcpf').innerHTML='CPF Incorreto!';
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+function criticaTelefone(){
+	if (document.getElementById('telefone').value.trim().length<12){
+		document.getElementById('msgtelefone').innerHTML='Telefone Incorreto!';
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+function criticaCEP(){
+	if (document.getElementById('cep').value.trim().length<9){
+		document.getElementById('msgcep').innerHTML='CEP Incorreto!';
+		return false;
+	}
+	else{
+		pegaCEP();
+		return true;
+	}
+}
+
+function criticaSenhaConfirmaSenha(id){
+	msgSaida='';
+	achouAlfa = false;
+	achouNumero = false;
+	achouSimbolo= false;
+	if (document.getElementById(id).value.trim().length<8 || document.getElementById(id).value.trim().length>12){
+		document.getElementById('msg' + id).innerHTML="Tamanho Inválido";
+	}
+	else{			
+		alfabeto='qwertyuiopasdfghjklzxcvbnm' + 'qwertyuiopasdfghjklzxcvbnm'.toUpperCase();		
+		numeros='1234567890';
+		simbolos='#$@&';
+		
+		for (item of alfabeto){		
+            if (document.getElementById(id).value.includes(item)) {
+				achouAlfa = true;
+				break;
+			}
+        }		
+		for (item of numeros){		
+            if (document.getElementById(id).value.includes(item)) {
+				achouNumero = true;
+				break;
+			}
+        }
+		for (item of simbolos){		
+            if (document.getElementById(id).value.includes(item)) {
+				achouSimbolo = true;
+				break;
+			}
+        }
+		
+		if (!achouAlfa) msgSaida = ' Caracter Alfabético faltando ' + '<br>';
+		if (!achouNumero) msgSaida = msgSaida + ' Caracter Numérico faltando'+ '<br>';
+		if (!achouSimbolo) msgSaida = msgSaida + ' Caracter Símbolo faltando';
+		
+		if (!achouAlfa || !achouNumero || !achouSimbolo){
+			document.getElementById('msg' + id).innerHTML=msgSaida;
+		}
+		else if (id='confirmaSenha' && document.getElementById('senha').value!=document.getElementById('confirmaSenha').value){
+			document.getElementById('msgconfirmaSenha').innerHTML='Senhas são diferentes!!!';			
+			return false;
+		}
+		else{
+			return true;
+		}
+	
+	}
+}
+
+function inibeDigitacao(id){
+    if (window.event.key === 'c' && window.event.ctrlKey) {
+           return false;
+    }else if (window.event.key === 'v' && window.event.ctrlKey) {
+           return false;
+    }
+     else{
+		permitido=document.getElementById(id).getAttribute("permitido").toUpperCase();
+		tecla = window.event.key.toUpperCase();		
+		if (permitido.indexOf(tecla)>=0 || window.event.altKey || window.event.keyCode<46) return true;
+		else return false;		
+	}
+}
+function inibeDigitacaoSenhas(id){
+	if (window.event.getModifierState(("CapsLock"))) {
+		document.getElementById('msg' + id).innerHTML="Atenção: Tecla Caps Lock Acionada!!!";
+	}
+	else{
+		apagaMsg(id);
+	}
+	if (window.event.key === 'c' && window.event.ctrlKey) {
+           return false;
+    }else if (window.event.key === 'v' && window.event.ctrlKey) {
+           return false;
+    }
+	permitido=document.getElementById(id).getAttribute("permitido") + document.getElementById(id).getAttribute("permitido").toUpperCase();	
+	
+	tecla = window.event.key.toUpperCase();		
+	if (permitido.indexOf(tecla)>=0 || window.event.altKey || window.event.keyCode<46){
+		return true;
+	}
+	else{
+		return false;
+	}
+
+}
+function colocaMascaraCPF(){
+	separacao1 = '.';
+    separacao2 = '-';    
+    conjunto1 = 3;
+    conjunto2 = 7;
+    conjunto3 = 11;	
+	campo = document.getElementById('cpf');	
+	if (campo.value.length == conjunto1)	campo.value = campo.value + separacao1;
+    else if (campo.value.length == conjunto2) campo.value = campo.value + separacao1;
+    else if (campo.value.length == conjunto3) campo.value = campo.value + separacao2;
+}
+function colocaMascaraTelefone(){
+	separacao1 = '(';
+    separacao2 = ')'; 	
+    conjunto1 = 0;
+    conjunto2 = 3;
+    
+	campo = document.getElementById('telefone');	
+	if (campo.value.length == conjunto1)	campo.value = campo.value + separacao1;
+    else if (campo.value.length == conjunto2) campo.value = campo.value + separacao2;
+    
+}
+function colocaMascaraCEP(){
+	separacao1 = '-';    
+    conjunto1 = 5;
+	campo = document.getElementById('cep');	
+	if (campo.value.length == conjunto1)	campo.value = campo.value + separacao1;   
+    
+}
+function enviar(){	
+	 
+	if (criticaNomeSobrenome() && criticaCPF() && criticaTelefone()  &&  criticaSenhaConfirmaSenha('senha') && criticaSenhaConfirmaSenha('confirmaSenha')){
+	   enviarDadosEntrada();	   
+	 }
+	else{
+		document.getElementById('msgfinal').innerHTML='Corrija os erros assinalados!!!';	
+	 }
+	
+}
+function enviarDadosEntrada(){
+	criaRequest();  
+
+	//var url = "http://152.92.181.90:8080/CursoJavaScript/ValidaDadosEntrada";
+	var url = "http://192.168.1.65:8080/CursoJavaScript/ValidaDadosEntrada";
+	request.open("POST", url, true);     
+	request.onreadystatechange = retornoEnviarDadosEntrada;
+	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	request.send('nome=' + document.getElementById("nome").value +  
+				'&cpf=' + document.getElementById("cpf").value +
+				'&telefone=' + document.getElementById("telefone").value +				
+				'&logradouro=' + document.getElementById("logradouro").value +
+				'&localidade=' + document.getElementById("localidade").value + 
+				'&cidade=' + document.getElementById("cidade").value +
+				'&uf=' + 	document.getElementById("uf").value +
+				'&numero=' + document.getElementById("numero").value +
+				'&complemento=' + document.getElementById("complemento").value +				
+				'&cep='  + document.getElementById("cep").value +
+				'&senha='  + document.getElementById("senha").value +
+				'&confirmaSenha='  + document.getElementById("confirmaSenha").value);
+	
+}
+function retornoEnviarDadosEntrada(){
+
+	if (request.readyState ==4) {  	
+      if (request.status == 200) {        
+       	var retorno = eval('(' + request.responseText + ')'); 
+      			if(retorno.erro==false){	
+					document.getElementById('telaEntradaDados').style.display="none";
+					document.getElementById('telaMenuCarros').style.display="block";
+					document.getElementById('tituloMenu').innerHTML=retorno.nome +  '</br>' +  '</br>' +  'Qual o seu futuro carro?';		
+      			}
+				else{
+					document.getElementById('msgfinal').innerHTML=retorno.msg;		
+				}
+		}				
+			
+	}		
+}
+function enviarMenu(name){
+
+	criaRequest();  
+	//var url = "http://152.92.181.90:8080/CursoJavaScript/EnviarMenu";
+	var url = "http://192.168.1.65:8080/CursoJavaScript/EnviarMenu";
+	request.open("POST", url, true);     
+	request.onreadystatechange = retornoEnviarMenu;
+	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	request.send('menu=' + name);  
+				
+	
+}
+function retornoEnviarMenu(){
+
+	if (request.readyState ==4) {  	
+      if (request.status == 200) {        
+       	var retorno = eval('(' + request.responseText + ')'); 
+      			if(retorno.erro==false){	
+					document.getElementById('telaEntradaDados').style.display="none";
+					document.getElementById('telaMenuCarros').style.display="block";
+					document.getElementById('msgModelos').innerHTML="";
+					
+					
+					table = document.getElementById("tabelaModelos");
+					
+							if(table.rows.length>1){
+								for (var i = table.rows.length - 1; i > 0; i--) {
+									table.deleteRow(i);
+								}					
+							}	
+					
+						if (retorno.erro==false){
+
+							if(retorno.Carros.length ==0){
+								document.getElementById('msgModelos').innerHTML=retorno.msg;
+							}
+				            else{
+								for (i=0; i<retorno.Carros.length; i++){						
+									row = table.insertRow(i+1);							
+									cell1 = row.insertCell(0);
+									cell2 = row.insertCell(1);
+									cell3 = row.insertCell(2);
+									cell4 = row.insertCell(3);
+						
+									cell1.innerHTML = retorno.Carros[i].marca;
+									cell2.innerHTML = retorno.Carros[i].modelo;
+									cell3.innerHTML = retorno.Carros[i].ano;
+									cell4.innerHTML = retorno.Carros[i].cor;
+								}	
+							}	
+						}					
+				}
+				else{
+					document.getElementById('msgModelos').innerHTML=retorno.msg;		
+				}
+			}				
+			
+	}		
+}
+
+</script>
+</body>
+<style>
+.modal_login_titulo h1{
+  color:#ffffff;  
+  z-index: 1; /* Sit on top */
+  left: 20%;
+  top: 20%;
+  width: 35%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color:#12174C;
+  padding-top: 10px;
+  padding-left:20px;
+  margin: 1% auto 15% auto;
+  border-radius:10px;
+}
+.modal_login{
+  color:#12174C;
+  //position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 20%;
+  top: 0%;
+  width: 75%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: #ffffff;
+  padding-top: 0px;
+  padding-left:0px;
+  margin: 0% auto 10% auto;
+  border-radius:10px;
+}
+.modal_login legend{  
+  color: #12174C;  
+  font-size: 1.0vw; 
+  border: none; 
+  font-weight: bold;  
+}
+.modal_login fieldset{    
+  border: none;
+padding: 10%;  
+}
+.modal_login label{ 
+ font-size: 1.4vw; 
+ //padding: 12px;
+}
+.modal_login input[type=text] {
+  width: 100%;
+  //padding: 12px 20px;
+  margin: auto 0;
+  display: inline-block;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  box-sizing: border-box;
+  //font-weight: bold;
+  font-size: 1.2vw; 
+}
+.modal_login input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 1.2vw;
+}
+.modal_login input[type=submit] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-weight: bold;
+  background-color:#fb8500; 
+  color: #12174C;   
+  font-size:1.6vw; 
+}
+
+</style>
+</html>

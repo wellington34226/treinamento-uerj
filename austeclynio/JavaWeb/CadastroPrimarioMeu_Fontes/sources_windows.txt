@@ -1,0 +1,6 @@
+-encoding utf8
+ -d "..\\CadastroPrimarioMeu\\WEB-INF\\classes"
+-classpath "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\lib\\servlet-api.jar;..\\CadastroPrimarioMeu\\WEB-INF\\lib\\commons-lang3-3.0.1.jar;..\\CadastroPrimarioMeu\\WEB-INF\\lib\\mysql-connector-java-8.0.11.jar"
+"model\\Validar.java"
+"web\\Cadastro.java"
+"dao\\Banco.java"

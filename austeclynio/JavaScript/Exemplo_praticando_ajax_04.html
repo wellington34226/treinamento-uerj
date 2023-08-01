@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso JavaScript</title>
+</head>
+<body>
+
+<h2> Praticando Ajax 04 </h2>
+<div id="area">
+	<div class="modal_login" id="telaMenuSanduiches" style="display:block">
+	  Quais sanduíches preferidos?<br><br>
+	  <p><label for="mortadela"><input type='radio' name="sanduiche" id="mortadela" value="mortadela">Mortadela</label></p>
+	  <p><label for="salame"><input type='radio' name="sanduiche" id="salame" value="salame">Salame</label></p>
+	  <p><label for="hamburguer"><input type='radio' name="sanduiche" id="hamburguer" value="hamburguer">Hamburguer</label></p>
+	  <p><label for="cachorro"><input type='radio' name="sanduiche" id="cachorro" value="cachorro">Cachorro Quente</label></p>
+	  <p><label for="queijo"><input type='radio' name="sanduiche" id="queijo" value="queijo">Queijo</label></p>
+	  <p><label for="podrao"><input type='radio' name="sanduiche" id="podrao" value="podrao">Podrão</label></p>
+	  <p><input type="button" value="Clique para selecionar os molhos" onclick="testaSanduiche()"></p>
+	  <p id='msg1'></p>
+	</div>
+	<div class="modal_login" id="telaMenuMolhos" style="display:none">
+	   Quais os molhos preferidos?<br>
+	  <table id="tabelaMolhos"  >						
+	  </table>	
+	  <input type="button" value="Clique para ver o que deu" onclick="testaMolho()">
+	  <p id='msg2'></p>
+	</div>
+</div>
+<script>
+/*-----------------------------------------------------------------------------------------*/
+let timeout_envio = null;
+function timeoutEnvio() {
+	alert("Por favor, envie seu pedido");
+	timeout_envio = setTimeout(timeoutEnvio,10000);
+}
+/*-----------------------------------------------------------------------------------------*/
+function criaRequest(){
+	   try {
+     		request = new XMLHttpRequest();
+   			} catch (trymicrosoft) {
+     			try {
+       				request = new ActiveXObject("Msxml2.XMLHTTP");
+     			} catch (othermicrosoft) {
+       				try {
+         				request = new ActiveXObject("Microsoft.XMLHTTP");
+       					} 	catch (failed) {
+         						request = null;
+       						}
+     				}
+   				}
+   		if (request == null)
+     		alert("Erro na criação do Objeto Request!");
+     	
+}
+/*-----------------------------------------------------------------------------------------*/ 
+
+function testaSanduiche(){	
+    sanduiches=[];	
+    ticou = false;
+	document.getElementById("msg1").innerHTML="";
+	document.getElementById("msg2").innerHTML="";
+	elementos = document.getElementsByName('sanduiche');
+	for (i=0; i<elementos.length; i++){
+		if(elementos[i].checked){
+		   ticou = true;
+		   sanduiches.push(elementos[i].value);		   
+		}
+	}
+	if(ticou==false){
+		document.getElementById("msg2").innerHTML='Tem que escolher algum sanduíche antes de enviar!!!' + '</br>'; 
+	}
+	else{
+		sanduiches=sanduiches.map(juntaSanduiches);
+		setTimeout(pegaSanduichesMolhos.bind(null,sanduiches.join(',').substring(1)),10000);
+	}
+	
+}
+/*-----------------------------------------------------------------------------------------*/
+function juntaSanduiches(pedaco){
+	return "&sanduiches=" + pedaco;
+}
+/*-----------------------------------------------------------------------------------------*/
+function testaMolho(){
+		molhos=[];	
+		ticou = false;
+		document.getElementById("msg1").innerHTML="";
+		elementos = document.getElementsByName('molhos');
+		for (i=0; i<elementos.length; i++){
+			if(elementos[i].checked){
+				ticou = true;
+				molhos.push(elementos[i].value);		   
+			}
+		}
+		if(ticou==false){
+			document.getElementById("msg2").innerHTML='Tem que escolher algum molho antes de enviar!!!' + '</br>'; 
+		}
+		else{
+			molhos=molhos.map(juntaMolhos);
+			clearInterval(timeout_envio);
+		    pegaResultado(molhos.join(',').substring(1));
+		}		
+	
+
+}
+/*-----------------------------------------------------------------------------------------*/
+function juntaMolhos(pedaco){
+	return "&molhos=" + pedaco;
+}
+/*-----------------------------------------------------------------------------------------*/
+ /*----------------------------------------------------------------------*/ 
+ function pegaResultado(molhos){
+	 
+	criaRequest();  				
+	var url = "http://152.92.181.90:8080/CursoJavaScript/PegaResultado";
+	//var url = "http://192.168.1.65:8080/CursoJavaScript/PegaResultado";
+	request.open("POST", url, true);     
+	request.onreadystatechange = preencheResultado;
+	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	request.send(molhos);	
+	
+	 
+ }
+ /*-----------------------------------------------------------------------*/ 	
+ function preencheResultado(){
+	saida='';
+	
+  	if (request.readyState ==4) {
+  	
+      if (request.status == 200) { 
+       
+       	retorno = eval('(' + request.responseText + ')');  
+      			if(retorno.erro==false){
+					if(retorno.Molhos.length==0){
+						document.getElementById('msg2').innerHTML=retorno.msg;
+					}
+				    else{
+														
+						for (i=0; i<retorno.Molhos.length; i++){						
+								saida+= retorno.Molhos[i].sabor + '<br>';								
+									
+						}
+
+						document.getElementById('msg2').innerHTML = saida;
+					}	
+									
+      			}
+				else{
+					document.getElementById("msg1").innerHTML="Sem molhos!";				
+				}
+		}				
+				
+	}	
+
+
+	
+
+}	
+/*----------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------*/ 
+ function pegaSanduichesMolhos(sanduiches){
+	 
+	criaRequest();  				
+	var url = "http://152.92.181.90:8080/CursoJavaScript/PegaMolhos";
+	//var url = "http://192.168.1.65:8080/CursoJavaScript/PegaMolhos";
+	request.open("POST", url, true);     
+	request.onreadystatechange = preencheSanduichesMolhos;
+	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	request.send(sanduiches);	
+	 
+	 
+ }
+ /*-----------------------------------------------------------------------*/ 	
+ function preencheSanduichesMolhos(){
+ 
+  	if (request.readyState ==4) {
+  	
+      if (request.status == 200) { 
+       
+       	retorno = eval('(' + request.responseText + ')');  
+				document.getElementById('telaMenuMolhos').style.display="block";
+				table = document.getElementById("tabelaMolhos");	
+
+				if(table.rows.length>1){
+					table.innerHTML='';					
+				}	
+				
+      			if(retorno.erro==false){
+				
+					if(retorno.Molhos.length ==0){
+						document.getElementById('msg2').innerHTML= document.getElementById('msg1') + " com " + retorno.msg;
+					}
+				            else{
+								for (i=0; i<retorno.Molhos.length; i++){						
+									row = table.insertRow(i);							
+									cell1 = row.insertCell(0);											
+									cell1.innerHTML = '<input type="checkbox" name="molhos" value="' + retorno.Molhos[i].sabor + '">' + retorno.Molhos[i].sabor + '<br>';	
+									
+									
+								}	
+							}	
+      			}
+				else{
+					document.getElementById("msg1").innerHTML="Sem molhos!";				
+				}
+				timeout_envio = setTimeout(timeoutEnvio,10000);
+		}				
+				
+	}	
+
+
+	
+
+}	
+/*----------------------------------------------------------------------*/ 
+
+</script>
+<style>
+#area {
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  /* justify-content: start; */
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.modal_login_titulo h1{
+  color:#ffffff;  
+  z-index: 1; /* Sit on top */
+  /* left: 20%;
+  top: 20%; */
+  width: fit-content; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color:#12174C;
+  padding-top: 10px;
+  padding-left:20px;
+  margin: 1% auto 15% auto;
+  border-radius:10px;
+}
+.modal_login{
+  color:#12174C;
+  /*position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  /* left: 20%;
+  top: 0%; */
+  width: fit-content; /* Full width */
+  height: 70%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: #ffffff;
+  padding-top: 0px;
+  padding-left:0px;
+  margin: 0% auto 10% auto;
+  border-radius:10px;
+}
+</style>
+</body>
+</html>

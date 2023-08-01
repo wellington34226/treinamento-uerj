@@ -1,0 +1,135 @@
+/* variáveis */
+:root {
+  /* cores */
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-gray: #808080;
+  /* fontes */
+  --font: 'Montserrat', Arial, sans-serif;
+  /* Tamanhos padrões  */
+  --small: 639;
+  --normal: 1023;
+  --large: 1199;
+  --xlage: 1439;
+  --larger: 1440;
+}
+
+/* RESET */
+html {
+  font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+/* ESTILOS */
+
+h1 {
+  color: #ffffff;
+  z-index: 1;
+  /* Sit on top */
+  left: 20%;
+  top: 20%;
+  background-color: #12174C;
+  padding-top: 10px;
+  padding-left: 20px;
+  margin: 1% auto 15% auto;
+  border-radius: 10px;
+}
+
+.modal_login {
+  color: #12174C;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 20%;
+  top: 0%;
+  background-color: #ffffff;
+  padding-top: 0px;
+  padding-left: 0px;
+  margin: 0% auto 15% auto;
+  border-radius: 10px;
+}
+
+.modal_login legend {
+  color: #12174C;
+  font-size: 1.0vw;
+  border: none;
+  font-weight: bold;
+}
+
+.modal_login fieldset {
+  border: none;
+  padding: 10%;
+}
+
+.modal_login label {
+  font-size: 1.4vw;
+  padding: 12px;
+}
+
+.modal_login input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: auto 0;
+  display: inline-block;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 1.2vw;
+}
+
+.modal_login input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 1.2vw;
+}
+
+.modal_login input[type=submit],
+.modal_login input[type=button] {
+  width: 49%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-weight: bold;
+  background-color: #fb8500;
+  color: #12174C;
+  font-size: 1.6vw;
+}
+
+.modal_login input[type=submit]:disabled {
+  background-color: #626262;
+}
+
+.mensagens {
+  color: red;
+}

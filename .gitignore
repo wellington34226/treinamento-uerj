@@ -1,0 +1,10 @@
+.vscode
+*-workspace
+*-project
+.hintrc
+**/.env
+**/*.class
+**/portuarios
+**/node_modules
+**/exemplos
+**/vendor

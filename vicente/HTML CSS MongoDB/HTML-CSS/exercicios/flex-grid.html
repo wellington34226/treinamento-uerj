@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treinamento CSS-FLEX e GRID</title>
+  <style>
+    html {
+      font-size: 16px;
+      height: 100vh;
+      overflow: hidden;
+    }
+    * {
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ol,
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      width: 99vw;
+      padding-top: 10px;
+    }
+    body article,
+    body article section,
+    body article section div{
+      row-gap: 5px;
+      column-gap: 10px;
+      flex-flow: row wrap;
+      align-items: baseline;
+      justify-content: center;
+    }
+    body article {
+      position: relative;
+      display: flex;
+    }
+    body article section,
+    body article section div{
+      border: 2px solid black;
+    }
+    body article section {
+      display: flex;
+    }
+    body article section div {
+      display: grid;
+    }
+    body article h1 {
+      width: 100%;
+    }
+    body article section h2 {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <h1>Propriedades FLEX e GRID</h1>
+    <section>
+      <h2>Propriedades FLEX</h2>
+      <div>
+        <h3>Propriedades aplicadas no pai</h3>
+        <a href="direction-flexbox.html">flex-direction</a>
+        <a href="wrap-flexbox.html">flex-wrap</a>
+        <a href="flow-flexbox.html">flex-flow</a>
+        <a href="gap-flexbox.html">gap</a>
+        <a href="justify-flexbox.html">justfy-content</a>
+        <a href="align-content-flexbox.html">align-content</a>
+        <a href="align-items-flexbox.html">align-items</a>
+      </div>
+      <div>
+        <h3>Propriedades aplicadas nos filhos</h3>
+        <a href="align-self-flexbox.html">align-self</a>
+        <a href="grow-flexbox.html">grow</a>
+        <a href="order-flexbox.html">order</a>
+      </div>
+    </section>
+    <section>
+      <h2>Propriedades GRID</h2>
+      <div>
+        <h3>Propriedades aplicadas no pai</h3>
+        <a href="desafio-grid.html">grid</a>
+        <a href="template-grid.html">grid-template</a>
+        <a href="template-areas-grid.html">grid-template-areas</a>
+      </div>
+      <div>
+        <h3>Propriedades aplicadas nos filhos</h3>
+        <a href="desafio-areas-grid.html">grid-area</a>
+      </div>
+    </section>
+  </article>
+</body>
+</html>

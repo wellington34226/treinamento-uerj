@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treinamento CSS-Grid</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: grid;
+            border: 10px solid #e09f3e;
+            height: 100vh;
+            width: 100vw;
+            grid-template-columns: 200px 1fr 300px;
+            grid-template-rows: 150px 1fr 100px;
+            grid-template-areas: "lateral menu menu"
+                                 "lateral conteudo sidebar"
+                                 "footer footer footer";
+        }
+
+        .box {
+            display: grid;
+            font-size: 35px;
+            text-align: center;
+            text-transform: uppercase;
+            align-items: center;
+        }
+
+        .menu {
+            background: #8ecae6;
+            grid-area: menu;
+        }
+
+        .lateral {
+            background: #219ebc;
+            grid-area: lateral;
+        }
+
+        .conteudo {
+            background: #023047;
+            grid-area: conteudo;
+        }
+
+        .sidebar {
+            background: #03ff64;
+            grid-area: sidebar;
+        }
+        .footer {
+            background: red;
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="flex-grid.html">FLEX e GRID</a>
+    <div class="container">
+        <div class="box menu">menu</div>
+        <div class="box lateral">lateral</div>
+        <div class="box conteudo">conteudo</div>
+        <div class="box sidebar">sidebar</div>
+        <div class="box footer">footer</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.sign-out {
+  display: grid;
+  grid-template-columns: 60px 60px;
+  height: 60px;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+button {
+  height: 60px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+img {
+  height: 35px;
+  display: block;
+}

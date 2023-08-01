@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Exercício - A7",
+    "slug": "exercicio_A7",
+    "version": "1.0.0",
+    "icon": "./android/app/src/main/res/drawable/logo.png",
+    "ios": {
+      "bundleIdentifier": "br.com.wellintoweb.a7",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "br.com.wellintoweb.a7",
+      "versionCode": 1
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "2606fc84-336b-47ea-abe9-dbed51a60b00"
+      }
+    }
+  },
+  "name": "Exercício - A7"
+}
