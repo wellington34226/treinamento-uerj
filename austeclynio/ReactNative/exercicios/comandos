@@ -1,0 +1,3 @@
+npm install -g create-react-native-app react-native-cli react-native-git-upgrade react-native-cli expo-cli
+npx create-react-native-app nome
+npx expo install react-native-web react-dom

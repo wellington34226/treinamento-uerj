@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="funcoes.js"></script>
+    <title>JavaScript - Exercício C2</title>
+  </head>
+  <body>
+<!--
+  Campo Nome:
+  - Somente pode conter caracteres alfabéticos
+  - Sem espaços em branco desnecessários
+  - Deve conter pelo menos um sobrenome
+  - Área para apresentação de mensagens de erros
+  CPF:
+  - Caracteres somente números
+  - Desnecessário, por enquanto, a validação
+  - Colocar uma máscara para o preenchimento, se houver tempo
+  - Área para apresentação de mensagens de erros
+  Senhas:
+  - Devem ser exatamente iguais
+  - Ter entre 8 e 12 caracteres
+  - Ter, no mínimo, 1 caracter alfabético
+  - Ter, no mínimo, 1 caracter numérico
+  - Ter, no mínimo, 1 dos símbolos #$@&
+  - Somente pode conter os tipos de caracteres acima
+  - As duas senhas têm áreas de mensagens individuais, 'msgsenha' e 'msgconfirmaSenha'. Usadas para erros individuais
+  - As duas senhas têm uma área de mensagens em comum, 'msgerrosenha', que dever ser utilizada para informar quando as senhas divergem ou quando estiver tudo correto
+-->
+    <div class="modal_login">
+      <fieldset>	
+        <label for="nome">Nome e Sobrenome</label>
+        <input class="limpar" type="text"  name="nome" id="nome" size="40" maxlength="40" title="Maximo 40 caracteres" onblur="criticaFormulario()" oninput=""><!--criticaNome('nome','msgnome')-->
+        <ul id="msgnome" style="font-size:100%;color:#ff0000">
+          <li class="mensagens letra">Somente caracteres alfabéticos</li>
+          <li class="mensagens tamanho">Deve ter nome e sobrenome</li>
+        </ul>
+        <br>
+        <label for="cpf">CPF</label>
+        <input class="limpar" type="text"  name="cpf" id="cpf" size="14" maxlength="14" title="Deve ter 14 caracteres" onblur="criticaFormulario()" oninput=""><!--criticaCPF('cpf','msgcpf')-->
+        <ul id="msgcpf" style="font-size:100%;color:#ff0000">
+          <li class="mensagens numeros">Somente números</li>
+          <li class="mensagens valido">CPF válido</li>
+        </ul>
+        <br>
+        <label for="senha">Senha</label>
+        <input class="limpar" type="password"  name="senha" id="senha" size="12" maxlength="12" title="Entre 8 e 12 caracteres" onblur="criticaFormulario()" oninput=""><!--criticarSenha('senha','msgsenha')-->
+        <ul id="msgsenha" style="font-size:100%;color:#ff0000">
+          <li class="mensagens tamanho">Minimo de 8 e máximo 12 caracteres</li>
+          <li class="mensagens letra">Mínimo uma letra</li>
+          <li class="mensagens numero">Mínimo um número</li>
+          <li class="mensagens simbolo">Mínimo um símbolo #$@&</li>
+          <li class="mensagens exclusivo">Somente são permitidos letras, números e #$@&</li>
+        </ul>
+        <br>
+        <label for="senha">Repita a Senha</label><br>
+        <input class="limpar" type="password" name="confirmaSenha" id="confirmaSenha" size="12" maxlength="12" title="Entre 8 e 12 caracteres" onblur="criticaFormulario()" oninput=""><!--criticarSenha('confirmaSenha','msgconfirmaSenha')-->
+        <ul id="msgconfirmaSenha" style="font-size:100%;color:#ff0000">
+          <li class="mensagens tamanho">Minimo de 8 e máximo 12 caracteres</li>
+          <li class="mensagens letra">Mínimo uma letra</li>
+          <li class="mensagens numero">Mínimo um número</li>
+          <li class="mensagens simbolo">Mínimo um símbolo #$@&</li>
+          <li class="mensagens exclusivo">Somente são permitidos letras, números e #$@&</li>
+        </ul>
+        <br>
+        <input type="button" value="LIMPAR" onclick="limpar()" id="botaoLimpar" />
+        <input type="submit" value="Enviar" onclick="criticaFormulario()" id="botaoLogin" disabled/>				
+        <br>
+        <p class="mensagens" id="msgerro" style="text-align:left;font-size:100%;padding-left: 50%;color: red;">Preencha os campos</p>
+      </fieldset>
+    </div>	
+  </body>
+</html>

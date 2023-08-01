@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Praticando o método setInterval() - 03</h1>
+
+<button onclick="chega()" id="chega">Clique para parar</button>
+<script>
+let relogio = setInterval(meuRelogio, 1000);
+let colors = ["red","green","blue","yellow","magenta",];
+
+function meuRelogio() {  
+  document.body.style.backgroundColor = document.body.style.backgroundColor == "yellow" ? "green" : "yellow";
+}
+
+function chega(){	
+	clearInterval(relogio);
+}
+</script>
+</body>
+</html>

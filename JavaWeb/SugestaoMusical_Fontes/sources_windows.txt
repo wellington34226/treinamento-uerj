@@ -1,5 +1,0 @@
--encoding utf8
- -d ..\SugestaoMusical\WEB-INF\classes
--classpath "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\lib\\servlet-api.jar"
-model\SelecaoMusical.java
-web\Recomendacao.java

@@ -1,0 +1,5 @@
+-encoding utf8
+ -d "..\\CadastroPrimario\\WEB-INF\\classes"
+-classpath "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\lib\\servlet-api.jar;..\\CadastroPrimario\\WEB-INF\\lib\\commons-lang3-3.0.1.jar;..\\CadastroPrimario\\WEB-INF\\lib\\mysql-connector-java-8.0.11.jar"
+"web\\ControllerCadastrarDados.java"
+"web\\ControllerRetornaNome.java"

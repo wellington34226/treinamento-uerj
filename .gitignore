@@ -2,5 +2,9 @@
 *-workspace
 *-project
 .hintrc
-Java/*/*.class
-HTML/portuarios
+**/.env
+**/*.class
+**/portuarios
+**/node_modules
+**/exemplos
+**/vendor

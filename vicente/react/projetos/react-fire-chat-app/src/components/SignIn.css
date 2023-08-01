@@ -1,0 +1,25 @@
+.sign-in {
+  display: grid;
+  height: calc(100vh - 60px);
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in button,
+.sign-in button:hover {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  outline: none;
+  align-items: center;
+  border: none;
+  padding: 10px 10px 10px 5px;
+  border-radius: 5px;
+  background-color: #306ccf;
+  cursor: pointer;
+  color: #fff;
+}
+
+.sign-in button img {
+  width: 40px;
+}
