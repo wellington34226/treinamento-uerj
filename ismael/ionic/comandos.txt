@@ -1,0 +1,6 @@
+npm install -g @ionic/cli native-run cordova-res
+ionic start nome-do-projeto template -–type=react --capacitor
+
+cd nome-do-projeto
+npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem @ionic/pwa-elements axios
+
