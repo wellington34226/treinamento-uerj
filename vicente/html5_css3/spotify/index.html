@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="spotify.svg">
+  <!--
+    <title>Layout Spotify</title>
+    <link rel="stylesheet" href="style.css">
+  -->
+  <title>Layout Spotify - SASS</title>
+  <link rel="stylesheet" href="sass/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="lateral">
+      <nav class="menu">
+        <ul class="menu-lateral primeiro-menu">
+          <li>
+            <a href="" class="ativado">
+              <span><i class="fa-solid fa-house"></i></span>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+              <span>Search</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span><i class="fa-solid fa-book-bookmark"></i></span>
+              <span>Your Library</span>
+            </a>
+          </li>
+        </ul>
+        <h2>Playlists</h2>
+        <ul class="menu-lateral segundo-menu">
+          <li>
+            <a href="" class="playlists-add">
+              <span><i class="fa-solid fa-plus"></i></span>
+              <span>Create Playlist</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="liked-songs">
+              <span><i class="fa-solid fa-heart"></i></span>
+              <span>Liked Songs</span>
+            </a>
+          </li>
+        </ul>
+        <h2>2023 Greatest SOngs</h2>
+        <ul class="menu-lateral teceiro-menu">
+          <li><a href="#">At Work</a></li>
+          <li><a href="#">Playlist #2</a></li>
+          <li><a href="#">Playlist $4</a></li>
+          <li><a href="#">RapCaviar</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="principal">
+      <header>
+        <div class="controles">
+          <button class="esquerda">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="direita">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="user-info">
+          <div class="avatar">
+            <img src="../sabrina.jpeg" alt="Avatar da Sabrina">
+          </div>
+          <div class="username">Sabrina Adams</div>
+          <button class="seta-baixo"><i class="fa-solid fa-sort-down"></i></button>
+        </div>
+      </header>
+      <section>
+        <h2>Good Morning</h2>
+        <ul class="ultimas-tocadas">
+          <li>
+            <span>
+              <img src="https://i.scdn.co/image/ab67706c0000da846039da5e8f7d206591004939" alt="">
+            </span>
+            <span>kick ass OST</span>
+          </li>
+          <li>
+            <span>
+              <img src="https://i.scdn.co/image/ab67706c0000da845cbae0d3330c39e81ef3e466" alt="">
+            </span>
+            <span>GTA vice city OST</span>
+          </li>
+          <li>
+            <span>
+              <img src=" https://i.scdn.co/image/ab67706c0000da846002394a3dfb864bf3198e48" alt="">
+            </span>
+            <span>the doors</span>
+          </li>
+          <li>
+            <span>
+              <img src="https://i.scdn.co/image/ab67616d0000b2731c5d4e4695659ec7a046364b" alt="">
+            </span>
+            <span>twilight force</span>
+          </li>
+          <li>
+            <span>
+              <img src=" https://i.scdn.co/image/ab67616d0000b2738c768929da0cf35e9a05dcd0" alt="">
+            </span>
+            <span>rage agaist the machine</span>
+          </li>
+          <li>
+            <span>
+              <img src="https://i.scdn.co/image/ab67706c0000da84564c8ee3f7989e5033abae31" alt="">
+            </span>
+            <span>epic fantasy music</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <div class="cabecalho">
+          <h2>Your Heavy Rotation</h2>
+          <h2>see more</h2>
+        </div>
+        <ul class="rotacao">
+          <li>
+            <span>
+              <img src="https://i.scdn.co/image/ab67706c0000da846039da5e8f7d206591004939" alt="">
+            </span>
+            <span>
+              <span>kick ass OST</span>
+              <span>Wellington Rodrigo</span>
+            </span>
+          </li>
+          <li>
+            <span>
+              <img src="https://i.scdn.co/image/ab67706c0000da845cbae0d3330c39e81ef3e466" alt="">
+            </span>
+            <span>
+              <span>GTA vice city OST</span>
+              <span>Wellington Rodrigo</span>
+            </span>
+          </li>
+          <li>
+            <span>
+              <img src=" https://i.scdn.co/image/ab67706c0000da846002394a3dfb864bf3198e48" alt="">
+            </span>
+            <span>
+              <span>the doors</span>
+              <span>Wellington Rodrigo</span>
+            </span>
+          </li>
+          <li>
+            <span>
+              <img src="https://i.scdn.co/image/ab67616d0000b2731c5d4e4695659ec7a046364b" alt="">
+            </span>
+            <span>
+              <span>Twilight force</span>
+              <span>Wellington Rodrigo</span>
+            </span>
+          </li>
+          <li>
+            <span>
+              <img src=" https://i.scdn.co/image/ab67616d0000b2738c768929da0cf35e9a05dcd0" alt="">
+            </span>
+            <span>
+              <span>rage agaist the machine</span>
+              <span>Wellington Rodrigo</span>
+            </span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <div class="tocador">
+    <div class="album">
+      <div class="cover">
+        <img src="https://i.scdn.co/image/ab67706f00000002a3910f83e3e52cdc751a900b" alt="">
+      </div>
+      <div class="info">
+        <span>90s Easy Rock</span>
+        <span>The best easy rock from the 1990s. Cover: Bryan Adams.</span>
+      </div>
+      <div class="like">
+        <button><i class="fa-regular fa-heart"></i></button>
+      </div>
+    </div>
+    <div class="controle-1">
+      <div class="linha-1">
+        <button class="embaralhar"><i class="fa-solid fa-shuffle"></i></button>
+        <button class="antes"><i class="fa-solid fa-backward-step"></i></button>
+        <button class="tocar"><i class="fa-solid fa-play"></i></button>
+        <button class="proximo"><i class="fa-solid fa-forward-step"></i></button>
+        <button class="repetir"><i class="fa-solid fa-repeat"></i></button>
+      </div>
+      <div class="linha-2">
+        <span class="tempo-atual">1:00</span>
+        <span class="barra-progresso">
+          <span class="progresso" style="width: 25%;">&nbsp;</span>
+        </span>
+        <span class="tempo-total">4:00</span>
+      </div>
+    </div>
+    <div class="controle-2">
+      <button class="fila"><i class="fa-solid fa-bars-staggered"></i></button>
+      <button class="dispositivo"><i class="fa-solid fa-computer"></i></button>
+      <button class="volume"><i class="fa-solid fa-volume-high"></i></button>
+      <span class="barra-progresso">
+        <span class="progresso" style="width: 80%;">&nbsp;</span>
+      </span>
+      <button class="tela-cheia"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+    </div>
+  </div>
+</body>
+</html>

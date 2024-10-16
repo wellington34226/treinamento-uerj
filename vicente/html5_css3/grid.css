@@ -1,0 +1,106 @@
+:root {
+    --gap:22px;
+  }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+.layout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+}
+
+aside {
+  background-color: red;
+}
+
+main {
+  background-color: blue;
+  overflow-y: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--gap);
+  padding: 20px;
+}
+.conteudo {
+  display: none;
+}
+.linha {
+  gap: var(--gap);
+  display: grid;
+}
+.row-1 {
+  grid-template-columns: 1fr 1fr;
+}
+.row-2 {
+  grid-template-columns: repeat(3,1fr);
+}
+.coluna {
+  border-radius: var(--gap);
+  padding: var(--gap);
+}
+.col-1 {
+  background-color: brown;
+}
+.col-2 {
+  background-color: green;
+}
+.col-3 {
+  background-color: tomato;
+}
+.col-4 {
+  background-color: gray;
+}
+.col-5 {
+  background-color: magenta;
+}
+.lateral {
+  padding: var(--gap);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 10px;
+}
+.pesquisa {
+  border-radius: 5px;
+  background-color: rgba(255,255,255, 0.3);
+}
+.pesquisa div.icone {
+  width: var(--gap);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: rgba(0,0,0,0.3);
+  background-color: brown;
+  height: 100%;
+}
+.pesquisa input {
+  border: none;
+  background-color: transparent;
+}
+
+.lateral div.logo {
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.lateral div.logo img {
+  height: 50px;
+}
+.lateral div.menu {
+  align-items: center;
+  justify-content: center;
+}
+.lateral div.rodape {
+  background-color: rgba(0,0,0,0.4);
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}

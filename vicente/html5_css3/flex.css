@@ -1,0 +1,109 @@
+:root {
+  --gap:22px;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+aside {
+  background-color: red;
+  width: 20vw;
+}
+
+main {
+  background-color: blue;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--gap);
+}
+
+.linha {
+  display: flex;
+  gap: var(--gap);
+}
+.row-1 {
+  height: 50vh;
+}
+.row-2 {
+  flex-grow: 1;
+}
+.coluna {
+  flex-grow: 1;
+  border-radius: var(--gap);
+  padding: var(--gap);
+}
+.col-1 {
+  background-color: brown;
+}
+.col-2 {
+  background-color: green;
+}
+.col-3 {
+  background-color: tomato;
+}
+.col-4 {
+  background-color: gray;
+}
+.col-5 {
+  background-color: magenta;
+}
+.lateral {
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap);
+}
+.pesquisa {
+  display: flex;
+  border-radius: 5px;
+  background-color: rgba(255,255,255, 0.3);
+}
+.pesquisa div.icone {
+  width: var(--gap);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px var(--gap);
+  color: rgba(0,0,0,0.3)
+}
+.pesquisa input {
+  flex-grow: 1;
+  border: none;
+  /* border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; */
+  background-color: transparent;
+}
+
+.lateral div.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.lateral div.logo img {
+  height: 50px;
+}
+.lateral div.menu {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lateral div.rodape {
+  background-color: rgba(0,0,0,0.4);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

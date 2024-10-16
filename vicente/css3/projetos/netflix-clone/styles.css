@@ -9,16 +9,16 @@
 /* Reset CSS Padrão */
 
 html {
-    box-sizing: border-box;
-    font-size: 16px;
-    height: 100vh;
-    overflow: hidden;
+  box-sizing: border-box;
+  font-size: 16px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body,
@@ -31,24 +31,23 @@ h6,
 p,
 ol,
 ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  position: relative;
 }
 
 /* Estilos Genéricos */
